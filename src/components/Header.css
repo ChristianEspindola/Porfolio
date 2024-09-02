@@ -1,0 +1,108 @@
+.header {
+  background: linear-gradient(to bottom, #00053c, #0a0b12);
+  color: whitesmoke;
+  padding: 20px;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.brand-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.role {
+  font-size: 14px;
+  color: #aaa;
+  margin-left: 5px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.download-cv {
+  background-color: #444;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: darkblue;
+}
+
+.header-content {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.header h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.header h2 {
+  font-size: 36px;
+  margin: 5px 0;
+}
+
+.header-buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: #555;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.skills-icons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.header-content {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.header h1 {
+  font-size: 48px; /* Ajusta el tamaño según prefieras */
+  margin-bottom: 10px;
+}
+
+.header h2 {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.header-buttons .btn {
+  padding: 12px 25px;
+  font-size: 18px;
+}
