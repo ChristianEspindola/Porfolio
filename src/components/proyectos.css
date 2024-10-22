@@ -1,0 +1,61 @@
+.containerp {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
+  gap: 20px; /* Espacio entre los elementos */
+  max-width: 1200px; /* Ajustar el ancho máximo */
+  margin: 0 auto; /* Centrar el grid */
+}
+
+.proyect1,
+.proyect2,
+.proyect3,
+.proyect4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Centra el contenido dentro de cada div */
+}
+
+.imagenp {
+  width: 100%; /* Hace que las imágenes ocupen el 100% del contenedor */
+  height: auto; /* Mantiene la proporción */
+  max-width: 500px; /* Aumenta el tamaño máximo de las imágenes */
+  object-fit: cover;
+}
+@media (max-width: 1400px) {
+  .containerp {
+    grid-template-columns: 1fr; /* Una columna en pantallas medianas */
+  }
+
+  .imagenp {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .containerp {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Una columna en pantallas medianas */
+  }
+
+  .imagenp {
+    max-width: 400px;
+  }
+}
+@media (max-width: 550px) {
+  .containerp {
+    grid-template-columns: 1fr; /* Una columna en pantallas medianas */
+  }
+
+  .imagenp {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imagenp {
+    max-width: 300px;
+  }
+}

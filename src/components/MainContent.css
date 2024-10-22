@@ -1,7 +1,12 @@
 main {
-  background-color: black;
+  background: transparent;
   padding: 20px;
   font-family: Arial, sans-serif;
+}
+
+h3 {
+  text-align: center; /* Centrando el encabezado */
+  margin-bottom: 20px; /* Margen inferior */
 }
 
 .section {
@@ -9,11 +14,124 @@ main {
   padding: 10px;
   border-radius: 8px;
 }
-
-.one {
-  background-color: #f0f0f0;
+.container {
+  max-width: 1800px;
+  border-radius: 1rem;
+  display: grid; /* Usa Flexbox para organizar las cards */
+  grid-template-columns: repeat(2, 1fr); /* Centra verticalmente las cards */
+  margin: 0 auto;
+  gap: 20px; /* Espaciado entre las cards */
+  padding: 40px; /* Espaciado interno del contenedor */
+  /* Asegura que el contenedor ocupe al menos el alto completo de la pantalla */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.3)
+  );
 }
 
-.two {
-  background-color: #e0e0e0;
+.Proyectos,
+.Sobremi,
+.Skills,
+.Cursos {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.3)
+  );
+  /* Fondo semitransparente */
+  backdrop-filter: blur(10px); /* Desenfoque de fondo */
+  -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+  border-radius: 15px; /* Bordes redondeados */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde semitransparente */
+  box-shadow:
+    inset 0 4px 6px rgba(0, 0, 0, 0.1),
+    0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Sombra suave para dar profundidad */
+  padding: 20px; /* Espaciado interno */
+  color: #fff; /* Color del texto blanco para contraste */
+  margin: 20px;
+}
+.Skills {
+  max-width: min-content;
+}
+.galeria-wrapper {
+  overflow: hidden; /* Oculta las imágenes que salen de los bordes del contenedor */
+  width: 600px;
+}
+
+.galeria {
+  display: flex;
+  transition: transform 1s ease-in-out; /* Transición suave para el desplazamiento */
+}
+.imagen {
+  height: 100px;
+  filter: drop-shadow(4px 3px 5px #0a0b12);
+  margin-right: 20px; /* Espaciado entre las imágenes */
+}
+
+@media (max-width: 1300px) {
+  .container {
+    grid-template-columns: 1fr; /* Una columna en pantallas medianas */
+  }
+
+  .Sobremi,
+  .Proyectos,
+  .Skills,
+  .Cursos {
+    margin: 10px 0; /* Menos margen en pantallas medianas */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .Sobremi,
+  .Proyectos,
+  .Skills,
+  .Cursos {
+    margin: 10px;
+    padding: 15px; /* Menos padding en pantallas más pequeñas */
+  }
+
+  .galeria-wrapper {
+    width: 450px;
+  }
+}
+
+@media (max-width: 580px) {
+  .galeria-wrapper {
+    width: 330px;
+  }
+
+  .container {
+    grid-template-columns: 1fr; /* Sigue siendo una columna en pantallas pequeñas */
+  }
+
+  .Sobremi,
+  .Proyectos,
+  .Skills,
+  .Cursos {
+    margin: 10px 0; /* Menos margen en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .galeria-wrapper {
+    width: 240px;
+  }
+
+  .Sobremi,
+  .Proyectos,
+  .Skills,
+  .Cursos {
+    padding: 10px;
+    margin: 5px 0;
+  }
 }

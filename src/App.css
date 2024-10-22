@@ -1,0 +1,5 @@
+/* src/components/FallingBalls.css */
+#root,
+html {
+  background: linear-gradient(to bottom, #00053c, #0a0b12);
+}
