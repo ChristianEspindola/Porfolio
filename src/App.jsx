@@ -1,18 +1,12 @@
 import "./App.css";
+import StarsBackground from "./components/StartBackground";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import MainContent from "./components/MainContent";
 import "./components/Header.css";
 import "./components/Footer.css";
 function App() {
   return (
     <div className="App">
-      <Header />
-
-      <MainContent />
-
-      <Footer />
+      <StarsBackground />
     </div>
   );
 }

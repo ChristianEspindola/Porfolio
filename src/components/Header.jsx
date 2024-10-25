@@ -20,7 +20,7 @@ const Header = () => {
             <a href="#skills">Skills</a>
           </li>
           <li>
-            <a href="#cyc">CyC</a>
+            <a href="#cyc">Formacion</a>
           </li>
           <li>
             <a href="Contactme">Contacto</a>
@@ -43,9 +43,7 @@ const Header = () => {
             GitHub
           </a>
         </div>
-        <div className="skills-icons">
-          {/* Aquí van los iconos de tus habilidades */}
-        </div>
+        <div className="skills-icons"></div>
       </div>
     </header>
   );

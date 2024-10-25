@@ -33,15 +33,21 @@ h3 {
 .Proyectos,
 .Sobremi,
 .Skills,
-.Cursos {
+.Cursos,
+.proyect1,
+.proyect2,
+.proyect3,
+.proyect4 {
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.3)
+    rgba(255, 255, 255, 0.2)
   );
+
   /* Fondo semitransparente */
-  backdrop-filter: blur(10px); /* Desenfoque de fondo */
-  -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+  backdrop-filter: blur(20px); /* Desenfoque de fondo */
+  -webkit-backdrop-filter: blur(20px); /* Soporte para Safari */
+
   border-radius: 15px; /* Bordes redondeados */
   border: 1px solid rgba(255, 255, 255, 0.3); /* Borde semitransparente */
   box-shadow:
@@ -51,7 +57,9 @@ h3 {
   padding: 20px; /* Espaciado interno */
   color: #fff; /* Color del texto blanco para contraste */
   margin: 20px;
+  position: relative;
 }
+
 .Skills {
   max-width: min-content;
 }

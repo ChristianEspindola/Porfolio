@@ -2,7 +2,7 @@ import React from "react";
 import "./MainContent.css";
 import ContactForm from "./ContactForm";
 import Galeria from "./Galeria";
-import Proyectos from "./Proyectos";
+import Proyectoss from "./Proyectoss";
 
 const MainContent = () => {
   return (
@@ -31,14 +31,14 @@ const MainContent = () => {
 
         <section className="Proyectos">
           <h3>Proyectos</h3>
-          <Proyectos />
+          <Proyectoss />
         </section>
         <section className="Skills">
           <h3>Skills</h3>
           <Galeria />
         </section>
         <section className="Cursos">
-          <h3>Cursos y Certificaciones</h3>
+          <h3>Formación Académica</h3>
           <div>.....</div>
         </section>
       </div>

@@ -2,4 +2,24 @@
 #root,
 html {
   background: linear-gradient(to bottom, #00053c, #0a0b12);
+  /* Evita scroll si se generan muchas estrellas */
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
 }

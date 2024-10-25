@@ -13,7 +13,43 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Centra el contenido dentro de cada div */
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+}
+
+.proyect1:hover {
+  /* width: 100%; /* La imagen ocupa el 100% del ancho de la card */
+  /* height: auto; /* Mantiene la proporción */
+  /* max-width: 350px; /* Tamaño máximo */
+  object-fit: cover; /* Asegura que la imagen no se distorsione */
+  /* transition: transform 0.1s ease; /* Transición suave en hover */
+}
+.proyect1:hover .imagenp,
+.proyect2:hover .imagenp,
+.proyect3:hover .imagenp,
+.proyect4:hover .imagenp {
+  /* transform: scale(1.9); /* La imagen crece al 120% */
+  opacity: 65%;
+}
+.proyect1:hover h5,
+.proyect2:hover h5,
+.proyect3:hover h5 {
+  /* transform: scale(2); */
+  /* margin-top: -20%;
+  color: #000;
+  font-size: 15px;
+  font-family: "Raleway", sans-serif;
+}
+.proyect4:hover h5 {
+  /* transform: scale(2)
+  /* margin-top: -20%;;  */
+  font-size: 15px;
+  font-family: "Raleway", sans-serif;
 }
 
 .imagenp {

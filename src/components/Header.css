@@ -5,9 +5,9 @@
   display: flex; /* Flexbox para alinear elementos */
   justify-content: space-between; /* Espacio entre los elementos */
   align-items: center; /* Centrar verticalmente */
-  background: rgba(255, 255, 255, 0.2); /* Fondo semitransparente */
-  backdrop-filter: blur(15px); /* Desenfoque del fondo */
-  -webkit-backdrop-filter: blur(15px); /* Soporte para Safari */
+  background: rgba(255, 255, 255, 0.3); /* Fondo semitransparente */
+  backdrop-filter: blur(20px); /* Desenfoque del fondo */
+  -webkit-backdrop-filter: blur(20px); /* Soporte para Safari */
   border-radius: 15px; /* Bordes redondeados */
   border: 1px solid rgba(255, 255, 255, 0.3); /* Borde semitransparente */
   padding: 20px; /* Espaciado interno */
@@ -50,10 +50,12 @@
 }
 
 h1 {
+  font-family: "Montserrat", sans-serif;
   font-size: 450%;
   color: #fff;
 }
 h2 {
+  font-family: "Montserrat", sans-serif;
   font-size: 350%;
   color: #fff;
   margin-top: -2%;
@@ -62,10 +64,10 @@ h2 {
 /* Estilos para el botón de descarga de CV */
 .download-cv {
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.539);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
 
-  background: rgba(255, 255, 255, 0.3); /* Fondo semitransparente */
+  background: rgba(255, 255, 255, 0.4); /* Fondo semitransparente */
   color: #fff; /* Color de texto blanco */
   border: none; /* Sin borde */
   padding: 10px 20px; /* Espaciado interno */
