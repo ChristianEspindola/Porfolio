@@ -15,10 +15,30 @@ import "./proyectos.css";
 
 function Proyectoss() {
   const [proyecto, setproyecto] = useState([
-    { id: "1", imagen: salon, titulo: "Salon de fiestas" },
-    { id: "2", imagen: inmo, titulo: "Inmobiliaria" },
-    { id: "3", imagen: tecno, titulo: "Tienda de celulares" },
-    { id: "4", imagen: todo, titulo: "TO-DO List" },
+    {
+      id: "1",
+      imagen: salon,
+      titulo: "Salon de fiestas",
+      clase: "salon",
+    },
+    {
+      id: "2",
+      imagen: inmo,
+      titulo: "Inmobiliaria",
+      clase: "Inmobiliaria",
+    },
+    {
+      id: "3",
+      imagen: tecno,
+      titulo: "Tienda de celulares",
+      clase: "Tienda",
+    },
+    {
+      id: "4",
+      imagen: todo,
+      titulo: "TO-DO List",
+      clase: "todo",
+    },
   ]);
 
   const handleDragEnd = (event) => {
@@ -44,6 +64,7 @@ function Proyectoss() {
               id={proyecto.id}
               imagen={proyecto.imagen}
               titulo={proyecto.titulo}
+              clase={proyecto.clase}
             />
           ))}
         </div>

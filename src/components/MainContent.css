@@ -15,13 +15,15 @@ h3 {
   border-radius: 8px;
 }
 .container {
-  max-width: 1800px;
+  max-width: 1600px;
   border-radius: 1rem;
-  display: grid; /* Usa Flexbox para organizar las cards */
-  grid-template-columns: repeat(2, 1fr); /* Centra verticalmente las cards */
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto auto;
   margin: 0 auto;
-  gap: 20px; /* Espaciado entre las cards */
-  padding: 40px; /* Espaciado interno del contenedor */
+  /* Espaciado entre las cards */
+  padding: 1%; /* Espaciado interno del contenedor */
   /* Asegura que el contenedor ocupe al menos el alto completo de la pantalla */
   background: linear-gradient(
     135deg,
@@ -29,25 +31,81 @@ h3 {
     rgba(255, 255, 255, 0.3)
   );
 }
+.Proyectos {
+  grid-column: 1/3;
+}
+.Formacion {
+  grid-column: 3/5;
+}
 
 .Proyectos,
 .Sobremi,
 .Skills,
-.Cursos,
-.proyect1,
-.proyect2,
-.proyect3,
-.proyect4 {
+.Formacion,
+.Cursando {
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.1),
     rgba(255, 255, 255, 0.2)
   );
+}
+.Sobremi {
+  grid-column: 1/3;
+}
+.Cursando {
+  grid-column: 4/5;
+}
+.Origen {
+  background: linear-gradient(135deg, #e0f7fae8, #b2ebf2);
+  grid-column: 3/4;
+}
 
-  /* Fondo semitransparente */
+.Origen h3 {
+  color: #000000;
+}
+.cardOrigen {
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #000000;
+}
+
+.cardOrigen img.clima {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 16px;
+}
+
+.cardOrigen p {
+  margin: 4px 0;
+  font-size: 1.1em;
+}
+
+.cardOrigen .icono {
+  display: inline-flex;
+  align-items: center;
+  margin: 2%;
+  font-size: 1.1em;
+}
+
+.cardOrigen .icono img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.Proyectos,
+.Sobremi,
+.Skills,
+.Formacion,
+.Origen,
+.Cursando {
   backdrop-filter: blur(20px); /* Desenfoque de fondo */
   -webkit-backdrop-filter: blur(20px); /* Soporte para Safari */
-
+  margin: 10px;
   border-radius: 15px; /* Bordes redondeados */
   border: 1px solid rgba(255, 255, 255, 0.3); /* Borde semitransparente */
   box-shadow:
@@ -56,26 +114,41 @@ h3 {
   /* Sombra suave para dar profundidad */
   padding: 20px; /* Espaciado interno */
   color: #fff; /* Color del texto blanco para contraste */
-  margin: 20px;
-  position: relative;
+
+  max-height: 100%;
 }
 
 .Skills {
-  max-width: min-content;
+  grid-column: 1/8;
 }
 .galeria-wrapper {
-  overflow: hidden; /* Oculta las imágenes que salen de los bordes del contenedor */
-  width: 600px;
+  overflow: hidden;
+  width: 100%; /* La galería ahora ocupará el 100% del contenedor */
 }
 
 .galeria {
   display: flex;
   transition: transform 1s ease-in-out; /* Transición suave para el desplazamiento */
 }
+
 .imagen {
   height: 100px;
+
   filter: drop-shadow(4px 3px 5px #0a0b12);
-  margin-right: 20px; /* Espaciado entre las imágenes */
+  margin: 1%; /* Espaciado entre las imágenes */
+}
+.containersobremi {
+  display: flex;
+  align-items: center; /* Centra la imagen y el texto verticalmente */
+  gap: 10px;
+}
+
+.imgsobremi {
+  width: 200px;
+  border-radius: 50%; /* Hace que la imagen sea circular */
+}
+.containersobremi .text {
+  flex: 1; /* Hace que el texto ocupe el espacio restante */
 }
 
 @media (max-width: 1300px) {
@@ -86,8 +159,11 @@ h3 {
   .Sobremi,
   .Proyectos,
   .Skills,
-  .Cursos {
-    margin: 10px 0; /* Menos margen en pantallas medianas */
+  .Formacion,
+  .Origen,
+  .Cursando {
+    max-height: max-content;
+    grid-column: 1/8;
   }
 }
 
@@ -99,21 +175,15 @@ h3 {
   .Sobremi,
   .Proyectos,
   .Skills,
-  .Cursos {
+  .Formacion,
+  .Origen,
+  .Cursando {
     margin: 10px;
     padding: 15px; /* Menos padding en pantallas más pequeñas */
-  }
-
-  .galeria-wrapper {
-    width: 450px;
   }
 }
 
 @media (max-width: 580px) {
-  .galeria-wrapper {
-    width: 330px;
-  }
-
   .container {
     grid-template-columns: 1fr; /* Sigue siendo una columna en pantallas pequeñas */
   }
@@ -121,7 +191,9 @@ h3 {
   .Sobremi,
   .Proyectos,
   .Skills,
-  .Cursos {
+  .Formacion,
+  .Origen,
+  .Cursando {
     margin: 10px 0; /* Menos margen en pantallas pequeñas */
   }
 }
@@ -138,8 +210,18 @@ h3 {
   .Sobremi,
   .Proyectos,
   .Skills,
-  .Cursos {
+  .Formacion,
+  .Origen,
+  .Cursando {
     padding: 10px;
     margin: 5px 0;
+  }
+
+  .containersobremi {
+    display: flex;
+  }
+  .imgsobremi {
+    width: 150px;
+    /* Hace que la imagen sea circular */
   }
 }

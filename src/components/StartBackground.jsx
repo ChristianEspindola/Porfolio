@@ -29,13 +29,13 @@ const StarsBackground = () => {
 
     const handleResize = () => {
       const currentStars = document.querySelectorAll(".star").length;
-      const totalStarsNeeded = 150; // Ajusta si quieres más estrellas
+      const totalStarsNeeded = 300; // Ajusta si quieres más estrellas
       if (currentStars < totalStarsNeeded) {
         createStars(totalStarsNeeded - currentStars); // Crea solo las estrellas que faltan
       }
     };
 
-    createStars(150); // Crear las estrellas iniciales
+    createStars(200); // Crear las estrellas iniciales
 
     window.addEventListener("resize", handleResize); // Escuchar cambios en el tamaño de la pantalla
     window.addEventListener("scroll", handleResize); // Asegura que haya estrellas mientras haces scroll

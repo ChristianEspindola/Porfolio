@@ -128,3 +128,15 @@ h2 {
     gap: 10px; /* Espacio reducido entre enlaces */
   }
 }
+@media (max-width: 400px) {
+  .header-content {
+    flex-direction: column;
+  }
+
+  .header-buttons {
+    display: flex;
+    flex-direction: column;
+    padding: 1% 1%;
+    margin: 5%;
+  }
+}

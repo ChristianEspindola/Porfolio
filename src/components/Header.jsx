@@ -1,5 +1,6 @@
 import React from "react";
 import perfil from "../img/perfil.jpg";
+import CV from "../cv/ChristianEspindolaCV.pdf";
 import "./Header.css";
 
 const Header = () => {
@@ -33,13 +34,29 @@ const Header = () => {
         <h2>Frontend Developer</h2>
 
         <div className="header-buttons">
-          <a href="tu_linkedin" className="btn">
+          <a
+            href="https://www.linkedin.com/in/christian-espindola-analista/"
+            className="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             LinkedIn
           </a>
-          <a href="ruta_a_tu_cv" className="download-cv">
+          <a
+            href={CV}
+            className="download-cv"
+            download="ChristianEspindolaCV.pdf"
+          >
+            {" "}
             Descargar CV
           </a>
-          <a href="tu_github" className="btn">
+
+          <a
+            href="https://github.com/ChristianEspindola"
+            className="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             GitHub
           </a>
         </div>

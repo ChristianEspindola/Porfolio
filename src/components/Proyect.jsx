@@ -2,7 +2,7 @@ import React from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
-function Proyect({ id, imagen, titulo }) {
+function Proyect({ id, imagen, titulo, clase }) {
   const {
     attributes,
     listeners,
@@ -24,9 +24,9 @@ function Proyect({ id, imagen, titulo }) {
       ref={setNodeRef}
       {...attributes}
       {...listeners}
-      className="proyect1"
+      className={clase}
     >
-      <img className="imagenp" src={imagen} alt={titulo} />
+      <img className="imagenp" src={imagen} alt={titulo} loading="lazy" />
       <h5>{titulo}</h5>
     </div>
   );

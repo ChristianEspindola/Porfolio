@@ -6,10 +6,14 @@
   margin: 0 auto; /* Centrar el grid */
 }
 
-.proyect1,
-.proyect2,
-.proyect3,
-.proyect4 {
+.salon,
+.Inmobiliaria,
+.Tienda,
+.todo,
+.analista,
+.react,
+.js,
+.web {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,38 +26,70 @@
   overflow: hidden;
 }
 
-.proyect1:hover {
-  /* width: 100%; /* La imagen ocupa el 100% del ancho de la card */
-  /* height: auto; /* Mantiene la proporción */
-  /* max-width: 350px; /* Tamaño máximo */
-  object-fit: cover; /* Asegura que la imagen no se distorsione */
-  /* transition: transform 0.1s ease; /* Transición suave en hover */
+/* Configuración de la tarjeta */
+.fullstack,
+.ingles {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0); /* Fondo transparente */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden;
 }
-.proyect1:hover .imagenp,
-.proyect2:hover .imagenp,
-.proyect3:hover .imagenp,
-.proyect4:hover .imagenp {
-  /* transform: scale(1.9); /* La imagen crece al 120% */
+
+/* Efecto de rotación en el hover */
+.fullstack:hover,
+.ingles:hover {
+  transform: rotateY(180deg); /* Voltea 180 grados en el eje Y */
+}
+
+.fullstack:hover .imagenp,
+.ingles:hover .imagenp {
+  filter: blur(5px);
+  transform: scale(1.4);
+}
+
+.fullstack:hover h5,
+.ingles:hover h5 {
+  transform: scale(2) rotateY(180deg);
+
+  margin-top: -20%;
+}
+
+.fullstack:hover h5 {
+  color: white;
+}
+.ingles:hover h5 {
+  color: #000;
+}
+
+.salon:hover .imagenp,
+.Inmobiliaria:hover .imagenp,
+.Tienda:hover .imagenp,
+.todo:hover .imagenp {
+  transform: scale(1.9); /* La imagen crece al 120% */
   opacity: 65%;
 }
-.proyect1:hover h5,
-.proyect2:hover h5,
-.proyect3:hover h5 {
-  /* transform: scale(2); */
-  /* margin-top: -20%;
+.salon:hover h5,
+.Inmobiliaria:hover h5,
+.Tienda:hover h5,
+.todo:hover h5 {
+  transform: scale(2);
+  margin-top: -20%;
   color: #000;
-  font-size: 15px;
-  font-family: "Raleway", sans-serif;
-}
-.proyect4:hover h5 {
-  /* transform: scale(2)
-  /* margin-top: -20%;;  */
-  font-size: 15px;
+  font-size: 14px;
   font-family: "Raleway", sans-serif;
 }
 
 .imagenp {
   width: 100%; /* Hace que las imágenes ocupen el 100% del contenedor */
+  max-height: 250px;
   height: auto; /* Mantiene la proporción */
   max-width: 500px; /* Aumenta el tamaño máximo de las imágenes */
   object-fit: cover;
@@ -68,7 +104,7 @@
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1400px) {
   .containerp {
     grid-template-columns: repeat(
       2,

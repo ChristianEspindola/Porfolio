@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import htmlImage from "../img/skills/html.png";
 import cssImage from "../img/skills/css.png";
 import jsImage from "../img/skills/js.png";
@@ -17,47 +17,72 @@ const imagenes = [
   { src: jsImage, alt: "JavaScript" },
   { src: reactImage, alt: "React" },
   { src: boostrapImage, alt: "Boostrap" },
-  { src: sassImage, alt: "sass" },
-  { src: sqlImage, alt: "sql" },
-  { src: gitImage, alt: "git" },
-  { src: githubImage, alt: "github" },
-  { src: figmaImage, alt: "figma" },
-  { src: firebaseImage, alt: "firebase" },
+  { src: sassImage, alt: "Sass" },
+  { src: sqlImage, alt: "SQL" },
+  { src: gitImage, alt: "Git" },
+  { src: githubImage, alt: "GitHub" },
+  { src: figmaImage, alt: "Figma" },
+  { src: firebaseImage, alt: "Firebase" },
 ];
 
 const Galeria = () => {
-  const [startIndex, setStartIndex] = useState(0);
-  const visibleImagesCount = 5;
-  const totalImages = imagenes.length;
+  const [visibleImagesCount, setVisibleImagesCount] = useState(5); // Número de imágenes visibles
+  const [currentIndex, setCurrentIndex] = useState(0); // Índice actual para controlar el desplazamiento
+  const galeriaRef = useRef(null);
 
+  // Ajustar el número de imágenes visibles según el tamaño de la pantalla
   useEffect(() => {
-    const interval = setInterval(() => {
-      setStartIndex((prevIndex) => (prevIndex + 1) % totalImages); // Incrementa el índice y reinicia en el final
-    }, 3000); // Cambia las imágenes cada 3 segundos
-
-    return () => clearInterval(interval); // Limpia el intervalo cuando el componente se desmonta
+    const updateVisibleImagesCount = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth > 1300) {
+        setVisibleImagesCount(5);
+      } else if (screenWidth > 768) {
+        setVisibleImagesCount(3);
+      } else {
+        setVisibleImagesCount(2);
+      }
+    };
+    updateVisibleImagesCount();
+    window.addEventListener("resize", updateVisibleImagesCount);
+    return () => window.removeEventListener("resize", updateVisibleImagesCount);
   }, []);
 
-  // Crear un array que incluye las imágenes duplicadas al final para un bucle suave
-  const visibleImages = [
-    ...imagenes,
-    ...imagenes.slice(0, visibleImagesCount), // Duplicamos las primeras imágenes al final
-  ];
+  // Auto desplazamiento suave cada 3 segundos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === imagenes.length - visibleImagesCount
+          ? 0 // Si llega al final, vuelve al inicio
+          : prevIndex + 1
+      );
+    }, 3000); // Ajusta la velocidad aquí (3000 ms = 3 segundos)
+
+    return () => clearInterval(interval);
+  }, [visibleImagesCount]);
 
   return (
-    <div className="galeria-wrapper">
+    <div
+      className="galeria-wrapper"
+      style={{ overflow: "hidden", width: "100%" }}
+    >
       <div
         className="galeria"
+        ref={galeriaRef}
         style={{
-          transform: `translateX(-${(startIndex % totalImages) * 110}px)`, // Ajusta el desplazamiento
+          display: "flex",
+          transition: "transform 1s ease-in-out", // Transición suave
+          transform: `translateX(-${(currentIndex * 100) / visibleImagesCount}%)`,
         }}
       >
-        {visibleImages.map((imagen, index) => (
+        {/* Duplicamos imágenes para garantizar bucle continuo */}
+        {imagenes.concat(imagenes).map((imagen, index) => (
           <img
             key={index}
             src={imagen.src}
             alt={imagen.alt}
+            loading="lazy"
             className="imagen"
+            style={{ width: `${100 / visibleImagesCount}%` }}
           />
         ))}
       </div>
