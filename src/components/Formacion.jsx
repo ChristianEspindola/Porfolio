@@ -20,28 +20,28 @@ function Formacion() {
       imagen: terciario,
       titulo: "IFTS21 - Analista en sistemas",
       clase: "analista",
-      loading: "lazy",
+      accion: "fade-up-left",
     },
     {
       id: "2",
       imagen: react,
       titulo: "CODERHOUSE - React JS",
       clase: "react",
-      loading: "lazy",
+      accion: "fade-up-right",
     },
     {
       id: "3",
       imagen: js,
       titulo: "CODERHOUSE - javascript",
       clase: "js",
-      loading: "lazy",
+      accion: "fade-down-left",
     },
     {
       id: "4",
       imagen: web,
       titulo: "CODERHOUSE - Desarrollo web",
       clase: "web",
-      loading: "lazy",
+      accion: "fade-down-right",
     },
   ]);
 
@@ -69,7 +69,7 @@ function Formacion() {
               imagen={formacion.imagen}
               titulo={formacion.titulo}
               clase={formacion.clase}
-              loading={formacion.loading}
+              accion={formacion.accion}
             />
           ))}
         </div>

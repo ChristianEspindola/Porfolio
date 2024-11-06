@@ -27,11 +27,6 @@ const Footer = () => {
               <i class="fab fa-github"></i>
             </a>
           </li>
-          <li>
-            <a href="mailto:christian.espindola@hotmail.com?subject=Contacto%20desde%20tu%20portafolio&body=Hola%20Christian,">
-              <i class="fas fa-envelope"></i>
-            </a>
-          </li>
         </ul>
       </div>
     </footer>

@@ -25,7 +25,12 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-form">
+    <div
+      id="contacto"
+      className="contact-form"
+      data-aos="flip-left"
+      data-aos-easing="ease-out-cubic"
+    >
       <h3>Contáctame</h3>
       <form onSubmit={handleSubmit}>
         <div className="form-group">

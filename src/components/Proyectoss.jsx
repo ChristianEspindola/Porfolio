@@ -19,25 +19,31 @@ function Proyectoss() {
       id: "1",
       imagen: salon,
       titulo: "Salon de fiestas",
-      clase: "salon",
+      clase: "salon ",
+      accion: "fade-down-right",
     },
     {
       id: "2",
       imagen: inmo,
       titulo: "Inmobiliaria",
       clase: "Inmobiliaria",
+
+      accion: "fade-down-left",
     },
     {
       id: "3",
       imagen: tecno,
       titulo: "Tienda de celulares",
       clase: "Tienda",
+
+      accion: "fade-up-right",
     },
     {
       id: "4",
       imagen: todo,
       titulo: "TO-DO List",
       clase: "todo",
+      accion: "fade-up-left",
     },
   ]);
 
@@ -65,6 +71,7 @@ function Proyectoss() {
               imagen={proyecto.imagen}
               titulo={proyecto.titulo}
               clase={proyecto.clase}
+              accion={proyecto.accion}
             />
           ))}
         </div>

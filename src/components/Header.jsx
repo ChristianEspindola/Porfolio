@@ -1,33 +1,13 @@
 import React from "react";
-import perfil from "../img/perfil.jpg";
+
 import CV from "../cv/ChristianEspindolaCV.pdf";
 import "./Header.css";
+import Navbaar from "./Navbaar";
 
 const Header = () => {
   return (
     <header className="header">
-      <nav className="navbar">
-        <div className="navbar-brand">
-          <img src={perfil} alt="Profile" className="profile-img" />
-        </div>
-        <ul className="nav-links">
-          <li>
-            <a href="#sobre-mi">Sobre mí</a>
-          </li>
-          <li>
-            <a href="#proyectos">Proyectos</a>
-          </li>
-          <li>
-            <a href="#skills">Skills</a>
-          </li>
-          <li>
-            <a href="#cyc">Formacion</a>
-          </li>
-          <li>
-            <a href="Contactme">Contacto</a>
-          </li>
-        </ul>
-      </nav>
+      <Navbaar />
 
       <div className="header-content">
         <h1> Christian Espindola</h1>

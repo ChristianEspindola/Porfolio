@@ -12,28 +12,33 @@ const MainContent = () => {
   return (
     <main>
       <div className="container">
-        <section className="Proyectos">
+        <section id="proyectos" className="Proyectos">
           <h3>Proyectos</h3>
           <Proyectoss />
         </section>
-        <section className="Formacion">
+        <section id="formacion" className="Formacion">
           <h3>Formación Académica</h3>
           <Formacion />
         </section>
-        <section className="Skills">
+        <section
+          id="skills"
+          className="Skills"
+          data-aos="zoom-in-up"
+          data-aos-duration="1500"
+        >
           <h3>Skills</h3>
           <Galeria />
         </section>
-        <section className="Sobremi">
+        <section id="sobre-mi" className="Sobremi" data-aos="fade-right">
           <h3>Sobre mí</h3>
           <SobreMi />
         </section>
 
-        <section className="Origen">
+        <section className="Origen" data-aos="flip-up">
           <h3>Origen: Buenos aires</h3>
           <Origen />
         </section>
-        <section className="Cursando">
+        <section className="Cursando" data-aos="fade-left">
           <h3>cursando</h3>
           <Cursando />
         </section>

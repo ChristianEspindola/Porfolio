@@ -2,7 +2,7 @@ import React from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
-function Proyect({ id, imagen, titulo, clase }) {
+function Proyect({ id, imagen, titulo, clase, accion }) {
   const {
     attributes,
     listeners,
@@ -25,6 +25,7 @@ function Proyect({ id, imagen, titulo, clase }) {
       {...attributes}
       {...listeners}
       className={clase}
+      data-aos={accion} // `data-aos` debe ir separado como atributo
     >
       <img className="imagenp" src={imagen} alt={titulo} loading="lazy" />
       <h5>{titulo}</h5>

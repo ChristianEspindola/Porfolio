@@ -4,11 +4,13 @@ import cssImage from "../img/skills/css.png";
 import jsImage from "../img/skills/js.png";
 import reactImage from "../img/skills/react.png";
 import boostrapImage from "../img/skills/boostrap.png";
+import tailwind from "../img/skills/tailwind.png";
 import sassImage from "../img/skills/sass.png";
 import sqlImage from "../img/skills/sql.png";
 import gitImage from "../img/skills/git.png";
 import githubImage from "../img/skills/github.png";
 import figmaImage from "../img/skills/figma.png";
+import photoshop from "../img/skills/photoshop.png";
 import firebaseImage from "../img/skills/firebase.png";
 
 const imagenes = [
@@ -17,11 +19,13 @@ const imagenes = [
   { src: jsImage, alt: "JavaScript" },
   { src: reactImage, alt: "React" },
   { src: boostrapImage, alt: "Boostrap" },
+  { src: tailwind, alt: "tailwind" },
   { src: sassImage, alt: "Sass" },
   { src: sqlImage, alt: "SQL" },
   { src: gitImage, alt: "Git" },
   { src: githubImage, alt: "GitHub" },
   { src: figmaImage, alt: "Figma" },
+  { src: photoshop, alt: "photoshop" },
   { src: firebaseImage, alt: "Firebase" },
 ];
 
