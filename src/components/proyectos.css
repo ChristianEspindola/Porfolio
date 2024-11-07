@@ -88,15 +88,15 @@
 }
 
 .imagenp {
-  width: 100%; /* Hace que las imágenes ocupen el 100% del contenedor */
+  width: 100%;
   max-height: 250px;
-  height: auto; /* Mantiene la proporción */
-  max-width: 500px; /* Aumenta el tamaño máximo de las imágenes */
+  height: auto;
+  max-width: 500px;
   object-fit: cover;
 }
 @media (max-width: 1400px) {
   .containerp {
-    grid-template-columns: 1fr; /* Una columna en pantallas medianas */
+    grid-template-columns: 1fr;
   }
 
   .imagenp {

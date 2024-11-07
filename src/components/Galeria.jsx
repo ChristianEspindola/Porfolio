@@ -19,50 +19,30 @@ const imagenes = [
   { src: jsImage, alt: "JavaScript" },
   { src: reactImage, alt: "React" },
   { src: boostrapImage, alt: "Boostrap" },
-  { src: tailwind, alt: "tailwind" },
+  { src: tailwind, alt: "Tailwind" },
   { src: sassImage, alt: "Sass" },
   { src: sqlImage, alt: "SQL" },
   { src: gitImage, alt: "Git" },
   { src: githubImage, alt: "GitHub" },
   { src: figmaImage, alt: "Figma" },
-  { src: photoshop, alt: "photoshop" },
+  { src: photoshop, alt: "Photoshop" },
   { src: firebaseImage, alt: "Firebase" },
 ];
 
 const Galeria = () => {
-  const [visibleImagesCount, setVisibleImagesCount] = useState(5); // Número de imágenes visibles
   const [currentIndex, setCurrentIndex] = useState(0); // Índice actual para controlar el desplazamiento
   const galeriaRef = useRef(null);
-
-  // Ajustar el número de imágenes visibles según el tamaño de la pantalla
-  useEffect(() => {
-    const updateVisibleImagesCount = () => {
-      const screenWidth = window.innerWidth;
-      if (screenWidth > 1300) {
-        setVisibleImagesCount(5);
-      } else if (screenWidth > 768) {
-        setVisibleImagesCount(3);
-      } else {
-        setVisibleImagesCount(2);
-      }
-    };
-    updateVisibleImagesCount();
-    window.addEventListener("resize", updateVisibleImagesCount);
-    return () => window.removeEventListener("resize", updateVisibleImagesCount);
-  }, []);
 
   // Auto desplazamiento suave cada 3 segundos
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === imagenes.length - visibleImagesCount
-          ? 0 // Si llega al final, vuelve al inicio
-          : prevIndex + 1
+      setCurrentIndex(
+        (prevIndex) => (prevIndex === imagenes.length - 1 ? 0 : prevIndex + 1) // Si llega al final, vuelve al inicio
       );
-    }, 3000); // Ajusta la velocidad aquí (3000 ms = 3 segundos)
+    }, 3000);
 
     return () => clearInterval(interval);
-  }, [visibleImagesCount]);
+  }, []);
 
   return (
     <div
@@ -75,7 +55,7 @@ const Galeria = () => {
         style={{
           display: "flex",
           transition: "transform 1s ease-in-out", // Transición suave
-          transform: `translateX(-${(currentIndex * 100) / visibleImagesCount}%)`,
+          transform: `translateX(-${(currentIndex * 100) / imagenes.length}%)`, // Desplazamiento automático
         }}
       >
         {/* Duplicamos imágenes para garantizar bucle continuo */}
@@ -86,7 +66,7 @@ const Galeria = () => {
             alt={imagen.alt}
             loading="lazy"
             className="imagen"
-            style={{ width: `${100 / visibleImagesCount}%` }}
+            style={{ width: "100%" }} // Cada imagen ocupa 100% del contenedor
           />
         ))}
       </div>

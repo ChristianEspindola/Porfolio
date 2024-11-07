@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ContactForm.css"; // Asegúrate de crear este archivo CSS para los estilos
+import "./ContactForm.css";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -16,14 +16,6 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aquí puedes manejar el envío del formulario, por ejemplo, enviarlo a una API
-    console.log("Formulario enviado:", formData);
-    // Limpia el formulario después de enviar
-    setFormData({ name: "", email: "", message: "" });
-  };
-
   return (
     <div
       id="contacto"
@@ -32,7 +24,13 @@ const ContactForm = () => {
       data-aos-easing="ease-out-cubic"
     >
       <h3>Contáctame</h3>
-      <form onSubmit={handleSubmit}>
+      <form
+        name="contact-form" // Nombre único del formulario
+        method="POST"
+        data-netlify="true" // Habilita el manejo del formulario por Netlify
+      >
+        <input type="hidden" name="form-name" value="contact-form" />
+
         <div className="form-group">
           <label htmlFor="name">Nombre</label>
           <input
@@ -44,6 +42,7 @@ const ContactForm = () => {
             required
           />
         </div>
+
         <div className="form-group">
           <label htmlFor="email">Correo Electrónico</label>
           <input
@@ -55,6 +54,7 @@ const ContactForm = () => {
             required
           />
         </div>
+
         <div className="form-group">
           <label htmlFor="message">Mensaje</label>
           <textarea
@@ -65,8 +65,9 @@ const ContactForm = () => {
             required
           ></textarea>
         </div>
+
         <div className="containerbutton">
-          <button className="button" role="button">
+          <button className="button" type="submit">
             <span></span>
             <span></span>
             <span></span>

@@ -17,7 +17,7 @@ const Origen = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Aquí define tu API Key
+  // API Key
   const API_KEY = "0b5874510cd0074bb24e947058352530";
 
   // URL de la API para Buenos Aires

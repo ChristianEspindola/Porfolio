@@ -3,42 +3,38 @@
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border-radius: 15px; /* Bordes redondeados */
+  border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.2); /* Borde semitransparente */
-  padding: 30px; /* Espaciado interno */
+  padding: 30px;
   max-width: 500px; /* Ancho máximo del formulario */
   margin: 20px auto; /* Centrar el formulario en la página */
 }
 
-/* Estilos para el encabezado del formulario */
 .contact-form h3 {
   color: #fff;
   text-align: center; /* Centrando el encabezado */
   margin-bottom: 20px; /* Margen inferior */
 }
 
-/* Estilos para los grupos de formulario */
 .form-group {
   color: rgb(255, 255, 255);
   margin: 15px; /* Espaciado entre los grupos de formulario */
 }
 
-/* Estilos para las etiquetas */
 label {
   display: block; /* Eliminar el comportamiento en línea */
   margin-bottom: 5px; /* Margen inferior */
   font-weight: bold; /* Texto en negrita */
 }
 
-/* Estilos para los campos de entrada */
 input,
 textarea {
-  width: 100%; /* Ancho completo */
-  padding: 10px; /* Espaciado interno */
-  border: none; /* Sin borde */
+  width: 100%;
+  padding: 10px;
+  border: none;
   border-radius: 8px; /* Bordes redondeados */
   background: rgba(255, 255, 255, 0.5); /* Fondo semitransparente */
-  color: #333; /* Color de texto */
+  color: #333;
   transition:
     background 0.3s,
     border 0.3s; /* Transiciones suaves */
@@ -50,9 +46,6 @@ textarea:focus {
   outline: none; /* Sin contorno */
 }
 
-/* Estilos para el botón de envío */
-
-/* CSS */
 .containerbutton {
   margin-top: 5%;
   margin-bottom: 2%;
@@ -166,5 +159,5 @@ textarea:focus {
 
 /* Estilos para el textarea */
 textarea {
-  resize: vertical; /* Permitir cambiar el tamaño verticalmente */
+  resize: vertical;
 }
