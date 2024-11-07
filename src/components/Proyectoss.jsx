@@ -7,10 +7,10 @@ import {
 } from "@dnd-kit/sortable";
 import Proyect from "./Proyect";
 
-import salon from "../img/proyectos/salon.png";
-import inmo from "../img/proyectos/inmo.png";
-import tecno from "../img/proyectos/tecno4all.png";
-import todo from "../img/proyectos/todo.png";
+import salon from "../img/proyectos/salon.webp";
+import inmo from "../img/proyectos/inmo.webp";
+import tecno from "../img/proyectos/tecno4all.webp";
+import todo from "../img/proyectos/todo.webp";
 import "./proyectos.css";
 
 function Proyectoss() {

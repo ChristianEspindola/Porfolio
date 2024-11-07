@@ -1,0 +1,82 @@
+/* Estilos para la barra de navegación */
+.navbar {
+  margin-top: 1%;
+  margin-bottom: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ocultar menú hamburguesa en pantallas grandes */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Estilos para enlaces de navegación */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.profile-img {
+  width: 70px; /* Ajusta el ancho del círculo */
+  height: 70px; /* Igual al ancho para que sea un círculo perfecto */
+  border-radius: 50%; /* Hace que la imagen sea circular */
+  overflow: hidden; /* Asegura que solo se muestre la parte circular */
+  object-fit: cover; /* Ajusta el tamaño de la imagen para llenar el contenedor sin distorsión */
+  object-position: top;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  /* Mostrar botón de menú hamburguesa en pantallas pequeñas */
+  .menu-toggle {
+    display: block;
+  }
+  .menu-toggle :hover {
+    color: black;
+  }
+
+  /* Ocultar enlaces de navegación por defecto en pantallas pequeñas */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  /* Mostrar enlaces de navegación cuando el menú está abierto */
+  .nav-links.open {
+    display: flex;
+  }
+}

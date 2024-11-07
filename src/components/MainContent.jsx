@@ -39,7 +39,7 @@ const MainContent = () => {
           <Origen />
         </section>
         <section className="Cursando" data-aos="fade-left">
-          <h3>cursando</h3>
+          <h3>Cursando</h3>
           <Cursando />
         </section>
       </div>

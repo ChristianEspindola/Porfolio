@@ -1,54 +1,3 @@
-/* Estilos para la barra de navegación */
-.navbar {
-  margin-top: 1%;
-  margin-bottom: 45px;
-  display: flex; /* Flexbox para alinear elementos */
-  justify-content: space-between; /* Espacio entre los elementos */
-  align-items: center; /* Centrar verticalmente */
-  background: rgba(255, 255, 255, 0.3); /* Fondo semitransparente */
-  backdrop-filter: blur(20px); /* Desenfoque del fondo */
-  -webkit-backdrop-filter: blur(20px); /* Soporte para Safari */
-  border-radius: 15px; /* Bordes redondeados */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde semitransparente */
-  padding: 20px; /* Espaciado interno */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
-  color: #fff; /* Color del texto blanco */
-  position: relative; /* Para posicionar elementos hijos */
-  overflow: hidden; /* Para evitar que los elementos hijos sobresalgan */
-}
-
-/* Estilos para la marca del navbar */
-.navbar-brand {
-  display: flex; /* Flexbox para alinear la imagen y el texto */
-  align-items: center; /* Centrar verticalmente */
-}
-
-.profile-img {
-  width: 70px; /* Ajusta el ancho del círculo */
-  height: 70px; /* Igual al ancho para que sea un círculo perfecto */
-  border-radius: 50%; /* Hace que la imagen sea circular */
-  overflow: hidden; /* Asegura que solo se muestre la parte circular */
-  object-fit: cover; /* Ajusta el tamaño de la imagen para llenar el contenedor sin distorsión */
-  object-position: top;
-}
-
-/* Estilos para los enlaces de navegación */
-.nav-links {
-  list-style: none; /* Eliminar los puntos de la lista */
-  display: flex; /* Flexbox para alinear los enlaces */
-  gap: 20px; /* Espaciado entre los enlaces */
-}
-
-.nav-links a {
-  text-decoration: none; /* Eliminar el subrayado */
-  color: #fff; /* Color de texto blanco */
-  transition: color 0.3s; /* Transición suave para el color */
-}
-
-.nav-links a:hover {
-  color: rgba(255, 255, 255, 0.7); /* Color al pasar el mouse */
-}
-
 h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 450%;
@@ -109,26 +58,13 @@ h2 {
   background: rgba(255, 255, 255, 0.5); /* Cambio de fondo al pasar el mouse */
 }
 
-/* Estilos para los iconos de habilidades */
-.skills-icons {
-  display: flex; /* Flexbox para alinear los iconos */
-  justify-content: center; /* Centrar los iconos */
-  margin-top: 20px; /* Margen superior */
-}
-
-/* Estilos generales para hacer el header responsivo */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
-    align-items: flex-start; /* Alinear a la izquierda */
-  }
-
-  .nav-links {
-    flex-direction: column; /* Cambiar a columna */
-    gap: 10px; /* Espacio reducido entre enlaces */
-  }
-}
 @media (max-width: 400px) {
+  h1 {
+    font-size: 380%;
+  }
+  h2 {
+    font-size: 320%;
+  }
   .header-content {
     flex-direction: column;
   }

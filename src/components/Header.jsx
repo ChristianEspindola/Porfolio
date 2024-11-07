@@ -1,5 +1,4 @@
 import React from "react";
-
 import CV from "../cv/ChristianEspindolaCV.pdf";
 import "./Header.css";
 import Navbaar from "./Navbaar";

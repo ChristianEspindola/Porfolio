@@ -43,21 +43,15 @@
   overflow: hidden;
 }
 
-/* Efecto de rotación en el hover */
-.fullstack:hover,
-.ingles:hover {
-  transform: rotateY(180deg); /* Voltea 180 grados en el eje Y */
-}
-
 .fullstack:hover .imagenp,
 .ingles:hover .imagenp {
   filter: blur(5px);
-  transform: scale(1.4);
+  transform: scale(2);
 }
 
 .fullstack:hover h5,
 .ingles:hover h5 {
-  transform: scale(2) rotateY(180deg);
+  transform: scale(1.4);
 
   margin-top: -20%;
 }
@@ -67,6 +61,12 @@
 }
 .ingles:hover h5 {
   color: #000;
+}
+.salon .imagenp,
+.Inmobiliaria .imagenp,
+.Tienda .imagenp,
+.todo .imagenp {
+  height: 250px;
 }
 
 .salon:hover .imagenp,

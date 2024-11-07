@@ -7,10 +7,10 @@ import {
 } from "@dnd-kit/sortable";
 import Proyect from "./Proyect";
 
-import terciario from "../img/formacion/terciario.png";
-import react from "../img/formacion/react.png";
-import js from "../img/formacion/js.png";
-import web from "../img/formacion/web.png";
+import terciario from "../img/formacion/terciario.webp";
+import react from "../img/formacion/react.webp";
+import js from "../img/formacion/js.webp";
+import web from "../img/formacion/web.webp";
 import "./proyectos.css";
 
 function Formacion() {

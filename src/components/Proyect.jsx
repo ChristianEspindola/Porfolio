@@ -25,7 +25,7 @@ function Proyect({ id, imagen, titulo, clase, accion }) {
       {...attributes}
       {...listeners}
       className={clase}
-      data-aos={accion} // `data-aos` debe ir separado como atributo
+      data-aos={accion}
     >
       <img className="imagenp" src={imagen} alt={titulo} loading="lazy" />
       <h5>{titulo}</h5>

@@ -56,12 +56,12 @@ h3 {
   grid-column: 4/5;
 }
 .Origen {
-  background: linear-gradient(135deg, #e0f7fae8, #b2ebf2);
+  background: linear-gradient(135deg, #e0f7faae, #b2ebf28a);
   grid-column: 3/4;
 }
 
 .Origen h3 {
-  color: #000000;
+  color: #ffffff;
 }
 .cardOrigen {
   border-radius: 12px;
@@ -70,7 +70,8 @@ h3 {
   margin: 0 auto;
   text-align: center;
   font-family: Arial, sans-serif;
-  color: #000000;
+  color: #ffffff;
+  font-weight: 600;
 }
 
 .cardOrigen img.clima {
@@ -146,6 +147,7 @@ h3 {
 .imgsobremi {
   width: 200px;
   border-radius: 50%; /* Hace que la imagen sea circular */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 .containersobremi .text {
   flex: 1; /* Hace que el texto ocupe el espacio restante */
@@ -195,6 +197,12 @@ h3 {
   .Origen,
   .Cursando {
     margin: 10px 0; /* Menos margen en pantallas pequeñas */
+  }
+
+  .containersobremi {
+    flex-direction: column; /* Cambia la dirección del contenedor a columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    margin-bottom: 5%;
   }
 }
 

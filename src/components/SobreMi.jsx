@@ -1,5 +1,5 @@
 import React from "react";
-import perfil from "../img/perfil.jpg";
+import perfil from "../img/perfil.webp";
 function SobreMi() {
   return (
     <div className="containersobremi">
