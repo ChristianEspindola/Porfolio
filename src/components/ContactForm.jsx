@@ -26,8 +26,7 @@ const ContactForm = () => {
       <h3>Contáctame</h3>
       <form
         name="contact-form" // Nombre único del formulario
-        method="POST"
-        data-netlify="true" // Habilita el manejo del formulario por Netlify
+        netlify
       >
         <input type="hidden" name="form-name" value="contact-form" />
 
