@@ -26,10 +26,10 @@ const ContactForm = () => {
       <h3>Contáctame</h3>
       <form
         name="contact-form" // Nombre único del formulario
-        netlify
+        method="POST"
+        data-netlify="true"
       >
-        <input type="hidden" name="form-name" value="contact-form" />
-
+        <input type="hidden" name="contact-form" value="contact-form" />
         <div className="form-group">
           <label htmlFor="name">Nombre</label>
           <input
@@ -41,7 +41,6 @@ const ContactForm = () => {
             required
           />
         </div>
-
         <div className="form-group">
           <label htmlFor="email">Correo Electrónico</label>
           <input
@@ -53,7 +52,6 @@ const ContactForm = () => {
             required
           />
         </div>
-
         <div className="form-group">
           <label htmlFor="message">Mensaje</label>
           <textarea
@@ -64,14 +62,13 @@ const ContactForm = () => {
             required
           ></textarea>
         </div>
-
         <div className="containerbutton">
           <button className="button" type="submit">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-            <span className="text">enviar</span>
+            <span className="text">Enviar</span>
           </button>
         </div>
       </form>
