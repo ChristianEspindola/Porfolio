@@ -1,0 +1,8 @@
+[build]
+  publish = "build" # Directorio donde se genera tu build de React, usualmente es "build" o "dist"
+  command = "npm run build" # Comando para construir tu proyecto, ajusta según sea necesario
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
