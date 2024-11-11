@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import Swal from "sweetalert2";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "@sweetalert2/theme-borderless/borderless.css";
+
 import "./ContactForm.css";
 
 const ContactForm = () => {
@@ -20,7 +22,7 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validación simple con SweetAlert2
+    // Validación  con SweetAlert
     if (formData.name.length < 3) {
       Swal.fire({
         icon: "warning",
@@ -40,22 +42,33 @@ const ContactForm = () => {
       cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
-        // Enviar el formulario a Netlify
-        document.forms["contact"].submit();
-
-        // Mostrar mensaje de éxito
-        Swal.fire({
-          icon: "success",
-          title: "Formulario enviado",
-          text: "Gracias por contactarme. En breve me contacto con vos.",
-        });
-
-        // Reiniciar los campos del formulario
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-        });
+        // Enviar datos a Netlify mediante fetch
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
+        })
+          .then(() => {
+            Swal.fire({
+              icon: "success",
+              title: "Formulario enviado",
+              text: "Gracias por contactarnos. Nos pondremos en contacto contigo pronto.",
+            });
+            // Reiniciar los campos del formulario
+            setFormData({
+              name: "",
+              email: "",
+              message: "",
+            });
+          })
+          .catch((error) => {
+            Swal.fire({
+              icon: "error",
+              title: "Error",
+              text: "Hubo un problema al enviar el formulario. Inténtalo de nuevo.",
+            });
+            console.error("Error al enviar el formulario:", error);
+          });
       }
     });
   };
