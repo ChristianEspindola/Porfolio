@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Swal from "sweetalert2";
 import "./ContactForm.css";
 
 const ContactForm = () => {
@@ -16,6 +17,49 @@ const ContactForm = () => {
     }));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Validación simple con SweetAlert2
+    if (formData.name.length < 3) {
+      Swal.fire({
+        icon: "warning",
+        title: "Nombre demasiado corto",
+        text: "Por favor, ingresa al menos 3 caracteres en el nombre.",
+      });
+      return;
+    }
+
+    // Confirmación de Envío
+    Swal.fire({
+      title: "¿Estás seguro?",
+      text: "¿Deseas enviar el formulario?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Sí, enviar",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Enviar el formulario a Netlify
+        document.forms["contact"].submit();
+
+        // Mostrar mensaje de éxito
+        Swal.fire({
+          icon: "success",
+          title: "Formulario enviado",
+          text: "Gracias por contactarme. En breve me contacto con vos.",
+        });
+
+        // Reiniciar los campos del formulario
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      }
+    });
+  };
+
   return (
     <div
       id="contacto"
@@ -30,8 +74,14 @@ const ContactForm = () => {
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
       >
+        {/* Campo oculto para Netlify */}
         <input type="hidden" name="form-name" value="contact" />
+
+        {/* Campo honeypot para evitar spam */}
+        <input type="hidden" name="bot-field" />
+
         <div className="form-group">
           <label htmlFor="name">Nombre</label>
           <input
@@ -43,6 +93,7 @@ const ContactForm = () => {
             required
           />
         </div>
+
         <div className="form-group">
           <label htmlFor="email">Correo Electrónico</label>
           <input
@@ -54,6 +105,7 @@ const ContactForm = () => {
             required
           />
         </div>
+
         <div className="form-group">
           <label htmlFor="message">Mensaje</label>
           <textarea
@@ -64,6 +116,7 @@ const ContactForm = () => {
             required
           ></textarea>
         </div>
+
         <div className="containerbutton">
           <button className="button" type="submit">
             <span></span>
