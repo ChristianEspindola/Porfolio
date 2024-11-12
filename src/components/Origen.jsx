@@ -9,6 +9,8 @@ import deefault from "../img/clima/default.png";
 import humedad from "../img/clima/humedad.png";
 import viento from "../img/clima/viento.png";
 import temperatura from "../img/clima/temperatura.png";
+import nieve from "../img/clima/nieve.png";
+import niebla from "../img/clima/niebla.png";
 
 import axios from "axios";
 
@@ -25,11 +27,28 @@ const Origen = () => {
 
   const weatherImages = {
     "cielo claro": sol,
-    "noche clara": nocheDespejada,
+    despejado: sol,
+    "noche despejada": nocheDespejada,
     "algo de nubes": parcialmenteNublado,
+    "nubes dispersas": parcialmenteNublado,
+    "noche con algunas nubes": parcialmenteNublado,
     nubes: nubes,
-    lluvia: lluvia,
+    "muy nuboso": nubes,
+    cubierto: nubes,
+    "noche nublada": nubes,
+    "lluvia ligera": lluvia,
+    "lluvia moderada": lluvia,
+    "lluvias intensas": lluvia,
+    aguacero: lluvia,
+    "noche con lluvias ligeras": lluvia,
     tormenta: tormenta,
+    "tormenta eléctrica": tormenta,
+    "noche con tormenta": tormenta,
+    "nieve ligera": nieve,
+    nieve: nieve,
+    niebla: niebla,
+    neblina: niebla,
+    "noche con niebla": niebla,
   };
 
   useEffect(() => {

@@ -58,9 +58,10 @@ const ContactForm = () => {
           .then(() => {
             Swal.fire({
               icon: "success",
+              confirmButtonColor: "#00053c",
               title: "Formulario enviado",
-              text: "Gracias por contactarme. En breve te estare contactando",
-              backdrop: `rgba(54, 70, 93, 0.85) url("https://media.tenor.com/rI_0O_9AJ5sAAAAi/nyan-cat-poptart-cat.gif")
+              text: "Gracias por contactarme. En breve te estare",
+              backdrop: `rgba(54, 70, 93, 0.85) url("https://media.tenor.com/rI_0O_9AJ5sAAAAj/nyan-cat-poptart-cat.gif")
     left top
     no-repeat`,
             });
