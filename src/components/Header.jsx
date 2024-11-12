@@ -2,6 +2,38 @@ import React from "react";
 import CV from "../cv/ChristianEspindolaCV.pdf";
 import "./Header.css";
 import Navbaar from "./Navbaar";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "@sweetalert2/theme-borderless/borderless.css";
+
+const handleDownloadCV = () => {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    customClass: {
+      popup: "custom-toast",
+    },
+    background: `rgba(54, 70, 93, 0.8) `,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    },
+  });
+
+  // Mostrar el Toast
+  Toast.fire({
+    icon: "success",
+    title: "Descarga iniciada",
+  });
+
+  // Crear y activar el enlace de descarga
+  const link = document.createElement("a");
+  link.href = CV; // Utiliza el archivo PDF importado
+  link.download = "ChristianEspindolaCV.pdf";
+  link.click();
+};
 
 const Header = () => {
   return (
@@ -21,14 +53,11 @@ const Header = () => {
           >
             LinkedIn
           </a>
-          <a
-            href={CV}
-            className="download-cv"
-            download="ChristianEspindolaCV.pdf"
-          >
-            {" "}
+
+          {/* Botón para mostrar Toast y descargar el CV */}
+          <button className="download-cv" onClick={handleDownloadCV}>
             Descargar CV
-          </a>
+          </button>
 
           <a
             href="https://github.com/ChristianEspindola"

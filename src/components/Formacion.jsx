@@ -6,6 +6,7 @@ import {
   rectSortingStrategy,
 } from "@dnd-kit/sortable";
 import Proyect from "./Proyect";
+import useIsScreenWide from "../Hooks/useIsScreenWide"; // Importa el hook personalizado
 
 import terciario from "../img/formacion/terciario.webp";
 import react from "../img/formacion/react.webp";
@@ -14,7 +15,7 @@ import web from "../img/formacion/web.webp";
 import "./proyectos.css";
 
 function Formacion() {
-  const [formacion, seformacion] = useState([
+  const [formacion, setFormacion] = useState([
     {
       id: "1",
       imagen: terciario,
@@ -45,36 +46,52 @@ function Formacion() {
     },
   ]);
 
+  const isScreenWide = useIsScreenWide();
+
   const handleDragEnd = (event) => {
     const { active, over } = event;
-
     if (active.id !== over.id) {
-      seformacion((items) => {
+      setFormacion((items) => {
         const oldIndex = items.findIndex((item) => item.id === active.id);
         const newIndex = items.findIndex((item) => item.id === over.id);
-
         return arrayMove(items, oldIndex, newIndex);
       });
     }
   };
 
   return (
-    <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-      <SortableContext items={formacion} strategy={rectSortingStrategy}>
-        <div className="containerp">
-          {formacion.map((formacion) => (
-            <Proyect
-              key={formacion.id}
-              id={formacion.id}
-              imagen={formacion.imagen}
-              titulo={formacion.titulo}
-              clase={formacion.clase}
-              accion={formacion.accion}
-            />
-          ))}
-        </div>
-      </SortableContext>
-    </DndContext>
+    <div className="containerp">
+      {isScreenWide ? (
+        <DndContext
+          collisionDetection={closestCenter}
+          onDragEnd={handleDragEnd}
+        >
+          <SortableContext items={formacion} strategy={rectSortingStrategy}>
+            {formacion.map((formacionItem) => (
+              <Proyect
+                key={formacionItem.id}
+                id={formacionItem.id}
+                imagen={formacionItem.imagen}
+                titulo={formacionItem.titulo}
+                clase={formacionItem.clase}
+                accion={formacionItem.accion}
+              />
+            ))}
+          </SortableContext>
+        </DndContext>
+      ) : (
+        formacion.map((formacionItem) => (
+          <Proyect
+            key={formacionItem.id}
+            id={formacionItem.id}
+            imagen={formacionItem.imagen}
+            titulo={formacionItem.titulo}
+            clase={formacionItem.clase}
+            accion={formacionItem.accion}
+          />
+        ))
+      )}
+    </div>
   );
 }
 

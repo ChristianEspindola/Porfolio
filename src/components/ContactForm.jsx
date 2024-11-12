@@ -37,9 +37,13 @@ const ContactForm = () => {
       title: "¿Estás seguro?",
       text: "¿Deseas enviar el formulario?",
       icon: "question",
+      confirmButtonColor: "#00053c",
+      cancelButtonColor: "#0a0b12",
+
       showCancelButton: true,
       confirmButtonText: "Sí, enviar",
       cancelButtonText: "Cancelar",
+      backdrop: `rgba(54, 70, 93, 0.9) `,
     }).then((result) => {
       if (result.isConfirmed) {
         // Enviar datos a Netlify mediante fetch
@@ -55,7 +59,10 @@ const ContactForm = () => {
             Swal.fire({
               icon: "success",
               title: "Formulario enviado",
-              text: "Gracias por contactarnos. Nos pondremos en contacto contigo pronto.",
+              text: "Gracias por contactarme. En breve te estare contactando",
+              backdrop: `rgba(54, 70, 93, 0.85) url("https://media.tenor.com/rI_0O_9AJ5sAAAAi/nyan-cat-poptart-cat.gif")
+    left top
+    no-repeat`,
             });
             // Reiniciar los campos del formulario
             setFormData({
@@ -69,6 +76,7 @@ const ContactForm = () => {
               icon: "error",
               title: "Error",
               text: "Hubo un problema al enviar el formulario. Inténtalo de nuevo.",
+              backdrop: `rgba(54, 70, 93, 0.85)`,
             });
             console.error("Error al enviar el formulario:", error);
           });

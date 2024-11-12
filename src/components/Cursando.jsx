@@ -6,7 +6,7 @@ import {
   rectSortingStrategy,
 } from "@dnd-kit/sortable";
 import Proyect from "./Proyect";
-
+import useIsScreenWide from "../Hooks/useIsScreenWide";
 import fullstack from "../img/cursando/fullstack.png";
 import ingles from "../img/cursando/ingles.png";
 
@@ -27,6 +27,7 @@ function Cursando() {
       clase: "ingles",
     },
   ]);
+  const isScreenWide = useIsScreenWide();
 
   const handleDragEnd = (event) => {
     const { active, over } = event;
@@ -41,22 +42,34 @@ function Cursando() {
     }
   };
 
-  return (
+  return isScreenWide ? (
     <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
       <SortableContext items={cursando} strategy={rectSortingStrategy}>
         <div className="containerp cursando">
-          {cursando.map((cursando) => (
+          {cursando.map((item) => (
             <Proyect
-              key={cursando.id}
-              id={cursando.id}
-              imagen={cursando.imagen}
-              titulo={cursando.titulo}
-              clase={cursando.clase}
+              key={item.id}
+              id={item.id}
+              imagen={item.imagen}
+              titulo={item.titulo}
+              clase={item.clase}
             />
           ))}
         </div>
       </SortableContext>
     </DndContext>
+  ) : (
+    <div className="containerp cursando">
+      {cursando.map((item) => (
+        <Proyect
+          key={item.id}
+          id={item.id}
+          imagen={item.imagen}
+          titulo={item.titulo}
+          clase={item.clase}
+        />
+      ))}
+    </div>
   );
 }
 

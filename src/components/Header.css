@@ -58,6 +58,10 @@ h2 {
   background: rgba(255, 255, 255, 0.5); /* Cambio de fondo al pasar el mouse */
 }
 
+.custom-toast {
+  border-radius: 10px; /* de la descarga */
+}
+
 @media (max-width: 400px) {
   h1 {
     font-size: 380%;

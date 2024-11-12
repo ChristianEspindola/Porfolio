@@ -6,7 +6,7 @@ import {
   rectSortingStrategy,
 } from "@dnd-kit/sortable";
 import Proyect from "./Proyect";
-
+import useIsScreenWide from "../Hooks/useIsScreenWide";
 import salon from "../img/proyectos/salon.webp";
 import inmo from "../img/proyectos/inmo.webp";
 import tecno from "../img/proyectos/tecno4all.webp";
@@ -46,6 +46,7 @@ function Proyectoss() {
       accion: "fade-up-left",
     },
   ]);
+  const isScreenWide = useIsScreenWide();
 
   const handleDragEnd = (event) => {
     const { active, over } = event;
@@ -60,7 +61,7 @@ function Proyectoss() {
     }
   };
 
-  return (
+  return isScreenWide ? (
     <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
       <SortableContext items={proyecto} strategy={rectSortingStrategy}>
         <div className="containerp">
@@ -77,6 +78,19 @@ function Proyectoss() {
         </div>
       </SortableContext>
     </DndContext>
+  ) : (
+    <div className="containerp">
+      {proyecto.map((proyecto) => (
+        <Proyect
+          key={proyecto.id}
+          id={proyecto.id}
+          imagen={proyecto.imagen}
+          titulo={proyecto.titulo}
+          clase={proyecto.clase}
+          accion={proyecto.accion}
+        />
+      ))}
+    </div>
   );
 }
 
