@@ -11,6 +11,7 @@ const Footer = () => {
             <a
               href="https://www.linkedin.com/in/christian-espindola-analista/"
               className="btn"
+              alt="linkedin Christian Espindola"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -21,6 +22,7 @@ const Footer = () => {
             <a
               href="https://github.com/ChristianEspindola"
               className="btn"
+              alt="Github Christian Espindola"
               target="_blank"
               rel="noopener noreferrer"
             >
